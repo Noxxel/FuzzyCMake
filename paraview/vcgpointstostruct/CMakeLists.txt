@@ -1,0 +1,2 @@
+add_executable(vcgpointstostruct main.cpp)
+target_link_libraries(vcgpointstostruct PRIVATE fuzzy_core easyloggingpp)

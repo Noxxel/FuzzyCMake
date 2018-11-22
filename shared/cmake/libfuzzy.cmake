@@ -5,6 +5,7 @@
 
 option(FUZZY_BUILD_TESTING "Build Testing" ON)
 option(FUZZY_BUILD_EXAMPLES "Build Examples" ON)
+option(FUZZY_BUILD_PARAVIEW "Build Paraview Plugins" ON)
 option(FUZZY_ENABLE_OPENMP "Enable OpenMP" ON)
 
 ### C++ Standard Version
@@ -52,6 +53,11 @@ endif ()
 ### Examples
 if (FUZZY_BUILD_EXAMPLES)
   add_subdirectory("${FUZZY_ROOT}/examples")
+endif ()
+
+### Paraview Plugins
+if (FUZZY_BUILD_PARAVIEW)
+  add_subdirectory("${FUZZY_ROOT}/paraview")
 endif ()
 
 ### Third Party
@@ -132,6 +138,7 @@ function(fuzzy_print_summary)
   message(STATUS "FUZZY_WITH_MARCH_NATIVE: ${FUZZY_WITH_MARCH_NATIVE}")
   message(STATUS "FUZZY_BUILD_TESTING: ${FUZZY_BUILD_TESTING}")
   message(STATUS "FUZZY_BUILD_EXAMPLES: ${FUZZY_BUILD_EXAMPLES}")
+  message(STATUS "FUZZY_BUILD_PARAVIEW: ${FUZZY_BUILD_PARAVIEW}")
   message(STATUS "FUZZY_ENABLE_OPENMP: ${FUZZY_ENABLE_OPENMP}")
   message(STATUS "BOOST_INCLUDE_DIR: ${Boost_INCLUDE_DIR}")
   message(STATUS "CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")

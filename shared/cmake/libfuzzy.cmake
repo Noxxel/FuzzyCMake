@@ -70,11 +70,6 @@ endif ()
 ### Third Party
 add_subdirectory(${FUZZY_THIRD_PARTY})
 
-### ParaView Plugins
-if (FUZZY_BUILD_PARAVIEW_PLUGINS)
-  add_subdirectory("${FUZZY_ROOT}/paraview")
-endif ()
-
 ### libFUZZY Source Files
 ## Add new source files here
 set(FILES_FUZZY_CORE
